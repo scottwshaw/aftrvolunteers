@@ -1,0 +1,11 @@
+_ReSharper*
+bin
+obj
+target
+*.suo
+*.swp
+*TestResult*
+*test-results*
+*.user
+*Logs/
+*sidekickapp.exe
