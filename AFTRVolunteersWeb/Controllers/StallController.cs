@@ -14,9 +14,6 @@ namespace AFTRVolunteersWeb.Controllers
             return View(db.Stalls.ToList());
         }
 
-        //
-        // GET: /Stall/Details/5
-
         public ActionResult Details(int id = 0)
         {
             Stall stall = db.Stalls.Find(id);
@@ -27,16 +24,10 @@ namespace AFTRVolunteersWeb.Controllers
             return View(stall);
         }
 
-        //
-        // GET: /Stall/Create
-
         public ActionResult Create()
         {
             return View();
         }
-
-        //
-        // POST: /Stall/Create
 
         [HttpPost]
         public ActionResult Create(Stall stall)
@@ -51,9 +42,6 @@ namespace AFTRVolunteersWeb.Controllers
             return View(stall);
         }
 
-        //
-        // GET: /Stall/Edit/5
-
         public ActionResult Edit(int id = 0)
         {
             Stall stall = db.Stalls.Find(id);
@@ -63,9 +51,6 @@ namespace AFTRVolunteersWeb.Controllers
             }
             return View(stall);
         }
-
-        //
-        // POST: /Stall/Edit/5
 
         [HttpPost]
         public ActionResult Edit(Stall stall)
@@ -79,9 +64,6 @@ namespace AFTRVolunteersWeb.Controllers
             return View(stall);
         }
 
-        //
-        // GET: /Stall/Delete/5
-
         public ActionResult Delete(int id = 0)
         {
             Stall stall = db.Stalls.Find(id);
@@ -91,9 +73,6 @@ namespace AFTRVolunteersWeb.Controllers
             }
             return View(stall);
         }
-
-        //
-        // POST: /Stall/Delete/5
 
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
