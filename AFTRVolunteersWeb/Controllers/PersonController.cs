@@ -1,105 +1,94 @@
+﻿using System;
+using System.Collections.Generic;
 using System.Data;
+using System.Data.Entity;
 using System.Linq;
+using System.Web;
 using System.Web.Mvc;
 using AFTRVolunteersWeb.Models;
 
 namespace AFTRVolunteersWeb.Controllers
 {
-    public class StallController : Controller
+    public class PersonController : Controller
     {
         private VolunteerContext db = new VolunteerContext();
 
         public ActionResult Index()
         {
-            return View(db.Stalls.ToList());
+            return View(db.People.ToList());
         }
-
-        //
-        // GET: /Stall/Details/5
 
         public ActionResult Details(int id = 0)
         {
-            Stall stall = db.Stalls.Find(id);
-            if (stall == null)
+            Person person = db.People.Find(id);
+            if (person == null)
             {
                 return HttpNotFound();
             }
-            return View(stall);
+            return View(person);
         }
-
-        //
-        // GET: /Stall/Create
 
         public ActionResult Create()
         {
             return View();
         }
 
-        //
-        // POST: /Stall/Create
-
         [HttpPost]
-        public ActionResult Create(Stall stall)
+        public ActionResult Create(Person person)
         {
             if (ModelState.IsValid)
             {
-                db.Stalls.Add(stall);
+                db.People.Add(person);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(stall);
+            return View(person);
         }
-
-        //
-        // GET: /Stall/Edit/5
 
         public ActionResult Edit(int id = 0)
         {
-            Stall stall = db.Stalls.Find(id);
-            if (stall == null)
+            Person person = db.People.Find(id);
+            if (person == null)
             {
                 return HttpNotFound();
             }
-            return View(stall);
+            return View(person);
         }
 
-        //
-        // POST: /Stall/Edit/5
-
         [HttpPost]
-        public ActionResult Edit(Stall stall)
+        public ActionResult Edit(Person person)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(stall).State = EntityState.Modified;
+                db.Entry(person).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(stall);
+            return View(person);
         }
 
         //
-        // GET: /Stall/Delete/5
+        // GET: /Person/Delete/5
 
         public ActionResult Delete(int id = 0)
         {
-            Stall stall = db.Stalls.Find(id);
-            if (stall == null)
+            Person person = db.People.Find(id);
+            if (person == null)
             {
                 return HttpNotFound();
             }
-            return View(stall);
+            return View(person);
         }
 
         //
-        // POST: /Stall/Delete/5
+        // POST: /Person/Delete/5
 
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {
-            Stall stall = db.Stalls.Find(id);
-            db.Stalls.Remove(stall);
+            Person person = db.People.Find(id);
+            db.People.Remove(person);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
