@@ -1,38 +1,28 @@
 ﻿@model IEnumerable<AFTRVolunteersWeb.Models.Person>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "People";
 }
 
-<h2>Index</h2>
+<h2>People</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table>
+<table class="table table-striped">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.EmailAddress)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.LastName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FirstName)
-        </th>
+        <th>Name</th>
+        <th>Email Address</th>
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.EmailAddress)
+            @Html.DisplayFor(modelItem => item.FirstName) @Html.DisplayFor(modelItem => item.LastName)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.LastName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FirstName)
+            <a href="mailto:#">@Html.DisplayFor(modelItem => item.EmailAddress)</a>
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.PersonId }) |
