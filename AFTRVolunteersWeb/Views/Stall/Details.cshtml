@@ -1,0 +1,29 @@
+﻿@model AFTRVolunteersWeb.Models.Stall
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Stall</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.OwnerId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.OwnerId)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.StallId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -9,7 +9,8 @@ namespace AFTRVolunteersWeb.Models
         public DbSet<Stall> Stalls { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<TimeSlot>().HasOptional(t => t.Person);
+            modelBuilder.Entity<Stall>().HasOptional(t => t.Owner);
+            modelBuilder.Entity<Stall>().HasMany(t => t.TimeSlots).WithOptional();
         }
     }
 }
