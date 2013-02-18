@@ -1,4 +1,8 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Data;
+using System.Globalization;
 using System.Linq;
 using System.Web.Mvc;
 using AFTRVolunteersWeb.Models;
@@ -26,7 +30,17 @@ namespace AFTRVolunteersWeb.Controllers
 
         public ActionResult Create()
         {
-            ViewBag.People = db.People.ToList();
+            List<SelectListItem> items = db.People.ToList().Select(p => new SelectListItem
+                {
+                    Value = p.PersonId.ToString(CultureInfo.InvariantCulture),
+                    Text = p.FullName()
+                }).ToList();
+            items.Insert(0,new SelectListItem
+                {
+                    Value = null,
+                    Text = "--Choose One--"
+                });
+            ViewBag.PeopleItems = items;
             return View();
         }
 
