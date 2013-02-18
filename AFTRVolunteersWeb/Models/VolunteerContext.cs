@@ -7,14 +7,8 @@ namespace AFTRVolunteersWeb.Models
         public VolunteerContext() : base("DefaultConnection")
         {
         }
-
         public DbSet<Person> People { get; set; }
         public DbSet<TimeSlot> TimeSlots { get; set; }
         public DbSet<Stall> Stalls { get; set; }
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-//            modelBuilder.Entity<Stall>().HasOptional(t => t.Person).WithOptionalPrincipal( );
-//            modelBuilder.Entity<Stall>().HasMany(t => t.TimeSlots).WithOptional();
-        }
     }
 }
