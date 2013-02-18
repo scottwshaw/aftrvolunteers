@@ -37,7 +37,7 @@ namespace AFTRVolunteersWeb.Controllers
                 }).ToList();
             items.Insert(0,new SelectListItem
                 {
-                    Value = null,
+                    Value = "",
                     Text = "--Choose One--"
                 });
             ViewBag.PeopleItems = items;
