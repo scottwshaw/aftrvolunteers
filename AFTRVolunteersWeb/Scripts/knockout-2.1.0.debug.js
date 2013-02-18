@@ -665,7 +665,7 @@ ko.exportSymbol('utils.domNodeDisposal.removeDisposeCallback', ko.utils.domNodeD
 
         // As of jQuery 1.7.1, jQuery parses the HTML by appending it to some dummy parent nodes held in an in-memory document fragment.
         // Unfortunately, it never clears the dummy parent nodes from the document fragment, so it leaks memory over time.
-        // Fix this by finding the top-most dummy parent element, and detaching it from its owner fragment.
+        // Fix this by finding the top-most dummy parent element, and detaching it from its Person fragment.
         if (elems && elems[0]) {
             // Find the top-most parent element that's a direct child of a document fragment
             var elem = elems[0];

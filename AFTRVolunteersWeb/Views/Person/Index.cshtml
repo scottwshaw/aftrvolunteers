@@ -19,10 +19,10 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.FirstName) @Html.DisplayFor(modelItem => item.LastName)
+            @item.FullName()
         </td>
         <td>
-            <a href="mailto:#">@Html.DisplayFor(modelItem => item.EmailAddress)</a>
+            <a href="mailto:#">@item.EmailAddress</a>
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.PersonId }) |

@@ -14,5 +14,12 @@ namespace AFTRVolunteersTest.Models
             var v = repository.CreatePerson("test", "volunteer", "tvolunteer@mailinator.com");
             Assert.AreEqual("test", v.FirstName);
         }
+        [Test]
+        public void 
+            ShouldMakeFullNameFromFirstAndLast()
+        {
+            var p = repository.CreatePerson("test", "volunteer", "a@b.c");
+            Assert.AreEqual("test volunteer", p.FullName());
+        }
     }
 }

@@ -26,6 +26,7 @@ namespace AFTRVolunteersWeb.Controllers
 
         public ActionResult Create()
         {
+            ViewBag.People = db.People.ToList();
             return View();
         }
 

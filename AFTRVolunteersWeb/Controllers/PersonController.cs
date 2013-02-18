@@ -68,9 +68,6 @@ namespace AFTRVolunteersWeb.Controllers
             return View(person);
         }
 
-        //
-        // GET: /Person/Delete/5
-
         public ActionResult Delete(int id = 0)
         {
             Person person = db.People.Find(id);
@@ -80,9 +77,6 @@ namespace AFTRVolunteersWeb.Controllers
             }
             return View(person);
         }
-
-        //
-        // POST: /Person/Delete/5
 
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)

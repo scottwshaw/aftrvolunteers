@@ -6,8 +6,8 @@ namespace AFTRVolunteersWeb.Models
     {
         public int StallId { get; set; }
         public string Name { get; set; }
-        public int? OwnerId { get; set; }
-        public virtual Person Owner { get; set; }
+        public int? PersonId { get; set; }
+        public virtual Person Person { get; set; }
         public virtual ICollection<TimeSlot> TimeSlots { get; set; } 
     }
 }

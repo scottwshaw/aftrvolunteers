@@ -12,12 +12,8 @@
 <div class="container">
 <table class="table table-striped">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Owner)
-        </th>
+        <th>Stall Name</th>
+        <th>Owner</th>
         <th></th>
     </tr>
 
@@ -27,8 +23,9 @@
             @Html.DisplayFor(modelItem => item.Name)
         </td>
         <td>
-            @if (item.OwnerId.HasValue) {
-                @Html.DisplayFor(modelItem => item.Owner.FirstName) @Html.DisplayFor(modelItem => item.Owner.LastName)
+            @if (item.PersonId.HasValue)
+            {
+                @item.Person.FullName()
             }
         </td>
         <td>

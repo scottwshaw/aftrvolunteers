@@ -3115,7 +3115,7 @@ jQuery.event = {
 		}
 
 		// Determine event propagation path in advance, per W3C events spec (#9951)
-		// Bubble up to document, then to window; watch for a global ownerDocument var (#9724)
+		// Bubble up to document, then to window; watch for a global PersonDocument var (#9724)
 		eventPath = [[ elem, special.bindType || type ]];
 		if ( !onlyHandlers && !special.noBubble && !jQuery.isWindow( elem ) ) {
 
@@ -6293,7 +6293,7 @@ jQuery.extend({
 						// Use the fragment we've already created for this document
 						safeFragment.appendChild( div );
 					} else {
-						// Use a fragment created with the owner document
+						// Use a fragment created with the Person document
 						createSafeFragment( context ).appendChild( div );
 					}
 
