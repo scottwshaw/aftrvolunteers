@@ -1,0 +1,38 @@
+﻿@model AFTRVolunteersWeb.Models.Stall
+
+@using (Html.BeginFormWithClassName("form-horizontal")) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Stall</legend>
+
+        <div class="control-group">
+            <div class="control-label">Name of Stall</div>
+            <div class="controls">
+                @Html.EditorFor(model => model.Name)
+                @Html.ValidationMessageFor(model => model.Name)
+            </div>
+        </div>
+
+        <div class="control-group">
+            <div class="control-label">Person</div>
+            <div class="controls">
+                @Html.DropDownList("PersonId", (IEnumerable<SelectListItem>) ViewBag.PeopleItems);
+                @Html.ValidationMessageFor(model => model.PersonId)
+            </div>
+        </div>
+        <div class="control-group">
+            <div class="controls">
+                <input type="submit" value="@ViewBag.Title" class="btn btn-primary"/>
+            </div>
+        </div>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
