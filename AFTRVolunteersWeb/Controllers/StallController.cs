@@ -23,6 +23,7 @@ namespace AFTRVolunteersWeb.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.PeopleItems = PeoplSelectList();
             return View(stall);
         }
 

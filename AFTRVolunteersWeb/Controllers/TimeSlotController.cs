@@ -30,16 +30,10 @@ namespace AFTRVolunteersWeb.Controllers
             return View(timeslot);
         }
 
-        //
-        // GET: /TimeSlot/Create
-
         public ActionResult Create()
         {
             return View();
         }
-
-        //
-        // POST: /TimeSlot/Create
 
         [HttpPost]
         public ActionResult Create(TimeSlot timeslot)
@@ -53,9 +47,6 @@ namespace AFTRVolunteersWeb.Controllers
             return View();
         }
 
-        //
-        // GET: /TimeSlot/Edit/5
-
         public ActionResult Edit(int id = 0)
         {
             TimeSlot timeslot = db.TimeSlots.Find(id);
@@ -65,9 +56,6 @@ namespace AFTRVolunteersWeb.Controllers
             }
             return View(timeslot);
         }
-
-        //
-        // POST: /TimeSlot/Edit/5
 
         [HttpPost]
         public ActionResult Edit(TimeSlot timeslot)

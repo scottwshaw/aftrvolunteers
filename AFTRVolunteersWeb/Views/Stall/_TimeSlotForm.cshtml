@@ -33,6 +33,13 @@
                     @Html.ValidationMessageFor(model => model.StopTime)
                 </div>
             </div>
+        <div class="span3 control-group">
+            <div class="control-label">Person</div>
+            <div class="controls">
+                @Html.DropDownList("PersonId", (IEnumerable<SelectListItem>) ViewBag.PeopleItems);
+                @Html.ValidationMessageFor(model => model.PersonId)
+            </div>
+        </div>
         <div class="span2 control-group">
             <div class="control-label"></div>
             <div class="controls">
