@@ -1,0 +1,51 @@
+﻿@model AFTRVolunteersWeb.Models.TimeSlot
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>TimeSlot</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.StartTime)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.StartTime)
+            @Html.ValidationMessageFor(model => model.StartTime)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.StopTime)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.StopTime)
+            @Html.ValidationMessageFor(model => model.StopTime)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.StallId)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.StallId)
+            @Html.ValidationMessageFor(model => model.StallId)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

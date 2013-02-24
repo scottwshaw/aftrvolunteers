@@ -1,0 +1,36 @@
+﻿@model AFTRVolunteersWeb.Models.TimeSlot
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>TimeSlot</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.StartTime)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.StartTime)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.StopTime)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.StopTime)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.StallId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.StallId)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.TimeSlotId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

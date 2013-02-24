@@ -8,7 +8,12 @@ namespace System.Web.Mvc
         {
             string controllerName = (string)helper.ViewContext.RouteData.Values["controller"];
             string actionName = (string)helper.ViewContext.RouteData.Values["action"];
-            return helper.BeginForm(actionName, controllerName, FormMethod.Post, new { @class = cssClassName });
+            return helper.BeginForm(actionName, controllerName, FormMethod.Post, new {@class = cssClassName});
+        }
+
+        public static MvcForm BeginFormWithClassName(this HtmlHelper helper, string actionName, string controllerName, string cssClassname)
+        {
+            return helper.BeginForm(actionName, controllerName, FormMethod.Post, new {@class = cssClassname});
         }
     }
 }

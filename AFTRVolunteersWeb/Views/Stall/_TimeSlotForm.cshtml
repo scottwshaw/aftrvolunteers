@@ -1,0 +1,45 @@
+﻿@using System.Globalization
+@model AFTRVolunteersWeb.Models.TimeSlot
+@{
+    Model.StallId = ViewBag.StallId;
+}
+@{
+    var times = new List<SelectListItem>();
+    for (int t = 1; t <= 8; t++)
+    {
+        times.Add(new SelectListItem
+            {
+                Value = t.ToString(CultureInfo.InvariantCulture),
+                Text = t.ToString(CultureInfo.InvariantCulture) + ":00"
+            });
+    }
+}
+
+@using (Html.BeginFormWithClassName("Create","TimeSlot", "form-inline"))
+    {
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(m => m.StallId)
+            <div class="span3 control-group">
+                <div class="control-label">Start Time</div>
+                <div class="controls">
+                    @Html.DropDownListFor(model => model.StartTime, times)
+                    @Html.ValidationMessageFor(model => model.StartTime)
+                </div>
+            </div>
+            <div class="span3 control-group">
+                <div class="control-label">Stop Time</div>
+                <div class="controls">
+                    @Html.DropDownListFor(model => model.StopTime, times)
+                    @Html.ValidationMessageFor(model => model.StopTime)
+                </div>
+            </div>
+        <div class="span2 control-group">
+            <div class="control-label"></div>
+            <div class="controls">
+                <input type="submit" value="Create Timeslot" class="btn"/>
+            </div>
+        </div>
+    }
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

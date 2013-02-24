@@ -1,5 +1,3 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Globalization;
@@ -30,18 +28,23 @@ namespace AFTRVolunteersWeb.Controllers
 
         public ActionResult Create()
         {
+            ViewBag.PeopleItems = PeoplSelectList();
+            return View();
+        }
+
+        private List<SelectListItem> PeoplSelectList()
+        {
             List<SelectListItem> items = db.People.ToList().Select(p => new SelectListItem
                 {
                     Value = p.PersonId.ToString(CultureInfo.InvariantCulture),
                     Text = p.FullName()
                 }).ToList();
-            items.Insert(0,new SelectListItem
+            items.Insert(0, new SelectListItem
                 {
                     Value = "",
                     Text = "--Choose One--"
                 });
-            ViewBag.PeopleItems = items;
-            return View();
+            return items;
         }
 
         [HttpPost]
@@ -59,11 +62,12 @@ namespace AFTRVolunteersWeb.Controllers
 
         public ActionResult Edit(int id = 0)
         {
-            Stall stall = db.Stalls.Find(id);
+            var stall = db.Stalls.Find(id);
             if (stall == null)
             {
                 return HttpNotFound();
             }
+            ViewBag.PeopleItems = PeoplSelectList();
             return View(stall);
         }
 

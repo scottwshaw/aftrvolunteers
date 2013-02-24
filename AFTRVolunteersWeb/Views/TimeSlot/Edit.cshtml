@@ -1,5 +1,4 @@
-﻿
-@model AFTRVolunteersWeb.Models.Person
+﻿@model AFTRVolunteersWeb.Models.TimeSlot
 
 @{
     ViewBag.Title = "Edit";
@@ -11,32 +10,32 @@
     @Html.ValidationSummary(true)
 
     <fieldset>
-        <legend>Person</legend>
+        <legend>TimeSlot</legend>
 
-        @Html.HiddenFor(model => model.PersonId)
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.EmailAddress)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.EmailAddress)
-            @Html.ValidationMessageFor(model => model.EmailAddress)
-        </div>
+        @Html.HiddenFor(model => model.TimeSlotId)
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.LastName)
+            @Html.LabelFor(model => model.StartTime)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.LastName)
-            @Html.ValidationMessageFor(model => model.LastName)
+            @Html.EditorFor(model => model.StartTime)
+            @Html.ValidationMessageFor(model => model.StartTime)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.FirstName)
+            @Html.LabelFor(model => model.StopTime)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.FirstName)
-            @Html.ValidationMessageFor(model => model.FirstName)
+            @Html.EditorFor(model => model.StopTime)
+            @Html.ValidationMessageFor(model => model.StopTime)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.StallId)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.StallId)
+            @Html.ValidationMessageFor(model => model.StallId)
         </div>
 
         <p>

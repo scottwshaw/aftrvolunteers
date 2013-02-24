@@ -5,7 +5,10 @@
 
     <fieldset>
         <legend>Stall</legend>
-
+        @if (ViewBag.Title == "Edit")
+        {
+            @Html.HiddenFor(m => m.StallId);
+        }
         <div class="control-group">
             <div class="control-label">Name of Stall</div>
             <div class="controls">

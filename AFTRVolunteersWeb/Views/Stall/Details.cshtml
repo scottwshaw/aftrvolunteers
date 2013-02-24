@@ -1,28 +1,35 @@
-﻿@model AFTRVolunteersWeb.Models.Stall
+﻿@using AFTRVolunteersWeb.Models
+@model AFTRVolunteersWeb.Models.Stall
 
 @{
     ViewBag.Title = "Details";
+    ViewBag.StallId = Model.StallId;
 }
 
-<h2>Details</h2>
+<h2>@Model.Name</h2>
+@if (@Model.PersonId.HasValue)
+{
+    <p>Owned by: @Model.Person.FirstName @Model.Person.LastName</p>
+} else {
+    <p>No owner assigned</p>
+}
 
-<fieldset>
-    <legend>Stall</legend>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Name)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Name)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.PersonId)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.PersonId)
-    </div>
-</fieldset>
+<table>
+    <thead>
+        <tr>
+            <th>Time Slot</th>
+            <th>Volunteer</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (TimeSlot ts in Model.TimeSlots)
+        {
+            @Html.Partial("_TimeSlotDetails", ts);
+        }
+    </tbody>
+</table>
+@Html.Partial("_TimeSlotForm", new TimeSlot())
 <p>
     @Html.ActionLink("Edit", "Edit", new { id=Model.StallId }) |
     @Html.ActionLink("Back to List", "Index")

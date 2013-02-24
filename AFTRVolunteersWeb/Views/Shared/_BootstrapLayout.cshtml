@@ -31,31 +31,31 @@
   </head>
 
   <body>
-    <div class="navbar navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
-          <a class="brand" href="#">A Fair to Remember</a>
-          <div class="nav-collapse">
-            <ul class="nav">
-                <li class="active">@Html.ActionLink("Home", "Index", "Home")</li>
-                <li>@Html.ActionLink("About", "About", "Home")</li>
-                <li>@Html.ActionLink("Stalls", "Index", "Stall")</li>
-                <li>@Html.ActionLink("People", "Index", "Person")</li>
-                <li class="pull-right">
-                  <section id="login">
-                    @Html.Partial("_LoginPartial")
-                  </section>
-                </li>
-            </ul>
-          </div><!--/.nav-collapse -->
-        </div>
+      <div class="navbar navbar-fixed-top">
+          <div class="navbar-inner">
+              <div class="container">
+                  <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                  </a>
+                  <a class="brand" href="#">A Fair to Remember</a>
+                  <div class="nav-collapse">
+                      <ul class="nav">
+                          <li class="active">@Html.ActionLink("Home", "Index", "Home")</li>
+                          <li>@Html.ActionLink("About", "About", "Home")</li>
+                          <li>@Html.ActionLink("Stalls", "Index", "Stall")</li>
+                          <li>@Html.ActionLink("People", "Index", "Person")</li>
+                          <li class="pull-right">
+                              <section id="login">
+                                  @Html.Partial("_LoginPartial")
+                              </section>
+                          </li>
+                      </ul>
+                  </div><!--/.nav-collapse -->
+              </div>
+          </div>
       </div>
-    </div>
     @RenderSection("featured", required: false)
     <div class="container">
 
